@@ -1,12 +1,15 @@
-import 'package:agri_guardian/screens/home_screen.dart';
+import 'package:agri_guardian/UI/screens/splash_screen/splash_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
 
-import 'disease_provider.dart';
-import 'fyp.dart';
+import 'models/disease_provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ResponsiveSizer(builder: (context, orientation, screenType) {
+    return const MyApp();
+  }));
 }
 
 class MyApp extends StatelessWidget {
@@ -19,13 +22,13 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => DiseaseProvider()),
       ],
-      child: MaterialApp(
+      child: GetMaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const ModelTestClass(),
+        home: const SplashScreen(),
       ),
     );
   }
