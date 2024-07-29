@@ -27,7 +27,7 @@ class CustomNextButton extends StatelessWidget {
           child: Center(
               child: Text(
                 'Next',
-                style: onBoardingButtonStyle,
+                style: smallTextStyle,
               )),
         ),
       ),

@@ -1,7 +1,7 @@
+import 'package:agri_guardian/UI/screens/auth/login_screen/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 
-import '../bottom_nav_screen/bottom_nav_screen.dart';
 
 class OnBoardingController extends GetxController {
   static OnBoardingController get instance => Get.find();
@@ -18,7 +18,7 @@ class OnBoardingController extends GetxController {
 
   void nextPage() {
     if (currentPageIndex == 2.obs) {
-      Get.offAll(() => const BottomNavbarScreen());
+      Get.offAll(() => const LoginScreen());
     } else {
       int page = currentPageIndex.value + 1;
       pageController.jumpToPage(page);

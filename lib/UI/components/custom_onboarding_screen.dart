@@ -23,7 +23,7 @@ class OnBoardingPage extends StatelessWidget {
               image: AssetImage(image)),
           Text(
             title,
-            style: onBoardingTitleStyle,
+            style: primaryTextStyle,
           ),
           SizedBox(
             height: 2.h,
