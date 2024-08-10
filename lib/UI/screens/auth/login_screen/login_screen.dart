@@ -1,3 +1,5 @@
+import 'package:agri_guardian/UI/components/custom_button.dart';
+import 'package:agri_guardian/UI/components/custom_text_feild.dart';
 import 'package:agri_guardian/UI/screens/auth/login_screen/login_controller.dart';
 import 'package:agri_guardian/core/constants/const_colors.dart';
 import 'package:flutter/material.dart';
@@ -7,6 +9,8 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 import '../../../../core/constants/cosnt_styles.dart';
 import '../../../../generated/assets.dart';
+import '../../../components/account_row.dart';
+import '../../bottom_nav_screen/bottom_nav_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -85,95 +89,48 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
               ),
-              const CustomButton(
+              CustomButton(
+                onPress: () {
+                  Get.offAll(() => const BottomNavbarScreen());
+                },
                 title: 'Login',
               ),
               Padding(
-                padding: EdgeInsets.only(top: 2.h),
+                padding: EdgeInsets.only(top: 1.h),
                 child: Text(
                   'OR',
                   style:
                       smallTextStyle.copyWith(color: ConstColor.kblack.value),
                 ),
               ),
+              Account_Row(),
               Padding(
-                padding: EdgeInsets.only(left: 10.w, right: 10.w),
+                padding: EdgeInsets.only(top: 1.h, left: 10.w, right: 10.w),
                 child: Container(
                   height: 8.h,
                   decoration: BoxDecoration(
                     color: ConstColor.primaryColor.value,
                     borderRadius: BorderRadius.circular(20),
                   ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Image.asset(
+                        Assets.google_pic,
+                        height: 30,
+                      ),
+                      Text(
+                        'Login with Google',
+                        style: mediumtextStyle.copyWith(
+                            color: ConstColor.kWhite.value,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w300),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ],
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class CustomButton extends StatelessWidget {
-  final String title;
-
-  const CustomButton({
-    required this.title,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 3.h, left: 28.w, right: 28.w),
-      child: Container(
-        height: 7.h,
-        decoration: BoxDecoration(
-          color: ConstColor.primaryColor.value,
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Center(
-            child: Text(
-          title,
-          style: primaryTextStyle.copyWith(color: ConstColor.kWhite.value),
-        )),
-      ),
-    );
-  }
-}
-
-class CustomTextfield extends StatelessWidget {
-  final TextEditingController controller;
-  final String hint;
-  final IconData icon;
-
-  const CustomTextfield({
-    required this.controller,
-    required this.hint,
-    required this.icon,
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(top: 1.h, left: 5.w, right: 5.w),
-      child: TextField(
-        controller: controller,
-        decoration: InputDecoration(
-          hintText: hint,
-          prefixIcon: Icon(
-            icon,
-            color: ConstColor.primaryColor.value,
-          ),
-          hintStyle: GoogleFonts.poppins(
-            color: ConstColor.primaryColor.value,
-            fontSize: 15.sp,
-            fontWeight: FontWeight.w400,
-          ),
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(20),
-            borderSide: BorderSide(color: ConstColor.primaryColor.value),
           ),
         ),
       ),

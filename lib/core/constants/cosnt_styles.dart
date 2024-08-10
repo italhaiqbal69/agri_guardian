@@ -5,7 +5,9 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 import 'const_colors.dart';
 
 var primaryTextStyle = GoogleFonts.overpass(
-    color: ConstColor.primaryColor.value, fontSize: 24, fontWeight: FontWeight.w900);
+    color: ConstColor.primaryColor.value,
+    fontSize: 24,
+    fontWeight: FontWeight.w900);
 
 var mediumtextStyle = GoogleFonts.poppins(
     color: ConstColor.kgrey.value,
@@ -27,4 +29,3 @@ var moreSmallText = GoogleFonts.poppins(
   fontSize: 15.sp,
   fontWeight: FontWeight.w400,
 );
-
