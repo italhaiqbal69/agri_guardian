@@ -11,4 +11,6 @@ class Assets {
   static const String dashboard_pic = 'assets/images/dashboard_pic.png';
   static const String wheat_pic = 'assets/images/wheat.png';
   static const String sugar_cane_pic = 'assets/images/sugar_cane.png';
+  static const String cloudy_pic = 'assets/images/cloudy.png';
+  static const String sunny_pic = 'assets/images/sun.png';
 }
