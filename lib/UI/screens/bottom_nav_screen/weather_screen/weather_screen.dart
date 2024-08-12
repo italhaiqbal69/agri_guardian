@@ -144,7 +144,7 @@ class WeatherWidget extends StatelessWidget {
             decoration: BoxDecoration(
               color: ConstColor.primaryColor.value.withOpacity(0.1),
               borderRadius: BorderRadius.circular(20),
-              border: Border.all(color: ConstColor.kblack.value`1111111),
+              border: Border.all(color: ConstColor.kblack.value),
             ),
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
