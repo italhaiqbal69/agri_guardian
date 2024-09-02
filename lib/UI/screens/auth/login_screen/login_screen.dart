@@ -91,7 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               CustomButton(
                 onPress: () {
-                  Get.offAll(() => const BottomNavbarScreen());
+                  _loginController.loginUser();
+                  // Get.offAll(() => const BottomNavbarScreen());
                 },
                 title: 'Login',
               ),

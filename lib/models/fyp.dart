@@ -20,12 +20,8 @@ class _ModelTestClassState extends State<ModelTestClass> {
   final Classifier classifier = Classifier();
   late DiseaseModel diseaseModel;
 
-  List<String> classNames = [
-    'glioma_tumor',
-    'meningioma_tumor',
-    'pituitary_tumor',
-    'no_tumor'
-  ];
+  List<String> classNames = ['Healthy', 'septoria', 'stripe_rust'];
+
   void getDiseasetatus(DiseaseProvider diseaseProvider) async {
     var image = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
@@ -117,7 +113,7 @@ class _ModelTestClassState extends State<ModelTestClass> {
               child: const Text('Pick Image from Gallery'),
             ),
             const SizedBox(height: 20),
-            Text(_outputText)
+            Text(_outputText),
           ],
         ),
       ),

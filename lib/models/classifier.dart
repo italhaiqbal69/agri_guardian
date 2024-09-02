@@ -43,7 +43,7 @@ class Classifier {
       path = convertPngToJpg(path, path.replaceAll(".png", ".jpg"));
     }
     imageFile = File(path);
-    int noOfClasses = 4;
+    int noOfClasses = 3;
 
     // await loadModel();
     var value = await classifyImage(imageFile, noOfClasses);
@@ -64,7 +64,7 @@ class Classifier {
   }
 
   loadModel() async {
-    interpreter = await tfl.Interpreter.fromAsset('assets/brain.tflite');
+    interpreter = await tfl.Interpreter.fromAsset('assets/wheatModel/wheatModel.tflite');
     print('loaded');
   }
 

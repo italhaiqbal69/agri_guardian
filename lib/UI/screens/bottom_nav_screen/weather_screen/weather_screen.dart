@@ -55,15 +55,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
       child: Scaffold(
         // backgroundColor: ConstColor.primaryColor.value.withOpacity(0.7),
         backgroundColor: ConstColor.primaryColor.value,
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            WeatherWidget(
-              weather: weatherInfo,
-              formattedDate: formattedDate,
-              formattedTime: formattedTime,
-            ),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              WeatherWidget(
+                weather: weatherInfo,
+                formattedDate: formattedDate,
+                formattedTime: formattedTime,
+              ),
+            ],
+          ),
         ),
       ),
     );

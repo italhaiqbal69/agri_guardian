@@ -1,4 +1,5 @@
 import 'package:agri_guardian/UI/screens/auth/signup_screen/signup_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -48,7 +49,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
             CustomTextfield(
-              controller: signupController.emailController,
+              controller: signupController.usernameController,
               hint: 'Enter Username',
               icon: Icons.email,
             ),
@@ -67,7 +68,7 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
             CustomTextfield(
-              controller: signupController.passwordController,
+              controller: signupController.emailController,
               hint: 'Enter Email',
               icon: Icons.password,
             ),
@@ -105,12 +106,14 @@ class _SignupScreenState extends State<SignupScreen> {
               ),
             ),
             CustomTextfield(
-              controller: signupController.passwordController,
+              controller: signupController.phoneNumberController,
               hint: 'Enter Phone',
               icon: Icons.password,
             ),
-             CustomButton(
-              onPress: (){},
+            CustomButton(
+              onPress: () {
+                signupController.createUser();
+              },
               title: 'Signup',
             ),
           ],

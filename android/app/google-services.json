@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "379023308639",
+    "project_id": "agriguardian-5d51d",
+    "storage_bucket": "agriguardian-5d51d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:379023308639:android:7db982c8c1d3dc2cbda8ea",
+        "android_client_info": {
+          "package_name": "com.example.agri_guardian"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTKkdOW0G4MYRNe5zog5gsfFhZDT7T4iA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
