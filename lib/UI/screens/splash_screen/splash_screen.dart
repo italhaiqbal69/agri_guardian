@@ -2,8 +2,7 @@ import 'dart:async';
 
 import 'package:agri_guardian/UI/screens/auth/login_screen/login_screen.dart';
 import 'package:agri_guardian/UI/screens/bottom_nav_screen/bottom_nav_screen.dart';
-import 'package:agri_guardian/UI/screens/bottom_nav_screen/dashboard_screen/dashboard_screen.dart';
-import 'package:agri_guardian/UI/screens/onboarding_screen/onboarding_screen.dart';
+
 import 'package:agri_guardian/generated/assets.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';

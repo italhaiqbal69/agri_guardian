@@ -6,9 +6,9 @@ import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
+import 'UI/screens/Wheat_disease_detection/disease_provider.dart';
 import 'core/constants/cosnt_texts.dart';
 import 'firebase_options.dart';
-import 'models/disease_provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -8,14 +8,14 @@ import 'classifier.dart';
 import 'disease_model.dart';
 import 'disease_provider.dart';
 
-class ModelTestClass extends StatefulWidget {
-  const ModelTestClass({super.key});
+class Wheat_model_screen extends StatefulWidget {
+  const Wheat_model_screen({super.key});
 
   @override
-  State<ModelTestClass> createState() => _ModelTestClassState();
+  State<Wheat_model_screen> createState() => _Wheat_model_screenState();
 }
 
-class _ModelTestClassState extends State<ModelTestClass> {
+class _Wheat_model_screenState extends State<Wheat_model_screen> {
   File? file;
   final Classifier classifier = Classifier();
   late DiseaseModel diseaseModel;

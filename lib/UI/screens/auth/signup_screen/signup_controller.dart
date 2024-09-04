@@ -24,6 +24,7 @@ class SignupController extends GetxController {
         'userEmail': userEmail,
         'create At': DateTime.now(),
         'userId': currentUser!.uid,
+        'Profile_pic':'',
       }).then((value) => {
                 FirebaseAuth.instance.signOut(),
                 Get.to(() => LoginScreen()),

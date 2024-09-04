@@ -1,7 +1,8 @@
+import 'package:agri_guardian/UI/screens/Wheat_disease_detection/Wheat_disease_detector.dart';
 import 'package:agri_guardian/UI/screens/bottom_nav_screen/dashboard_screen/dashboard_controller.dart';
 import 'package:agri_guardian/core/constants/const_colors.dart';
-import 'package:agri_guardian/core/constants/cosnt_styles.dart';
 import 'package:agri_guardian/generated/assets.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -68,42 +69,71 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 'Welcome Back Sir!\nWhich Crop would you want to Diagnose?',
                 style: GoogleFonts.zenAntique(fontSize: 22)),
           ),
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: GridView.builder(
-                  itemCount: _dashboardController.plantsCategory.length,
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      childAspectRatio: 2 / 2,
-                      // mainAxisSpacing: 10,
-                      crossAxisSpacing: 10),
-                  itemBuilder: (ctx, index) {
-                    return Container(
-                      decoration: BoxDecoration(
-                        color: ConstColor.primaryColor.value.withOpacity(0.5),
-                        border: Border.all(color: ConstColor.kblack.value),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
+          Padding(
+            padding: EdgeInsets.only(top: 6.h),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                InkWell(
+                  onTap: () {
+                    Get.to(() => Wheat_model_screen());
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: ConstColor.primaryColor.value.withOpacity(0.5),
+                      border: Border.all(color: ConstColor.kblack.value),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
                       child: Column(
                         children: [
                           Image.asset(
-                            _dashboardController.plantsCategory[index]['image'],
-                            height: 15.h,
+                            Assets.wheat_pic,
+                            height: 20.h,
+                            width: 40.w,
                           ),
                           Padding(
                             padding: EdgeInsets.only(top: 1.h),
                             child: Text(
-                              _dashboardController.plantsCategory[index]
-                                  ['name'],
+                              'Wheat',
                               style: GoogleFonts.zenAntique(
                                   fontSize: 16, fontWeight: FontWeight.w500),
                             ),
                           ),
                         ],
                       ),
-                    );
-                  }),
+                    ),
+                  ),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: ConstColor.primaryColor.value.withOpacity(0.5),
+                    border: Border.all(color: ConstColor.kblack.value),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      children: [
+                        Image.asset(
+                          Assets.sugar_cane_pic,
+                          height: 20.h,
+                          width: 40.w,
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 1.h),
+                          child: Text(
+                            'Sugar Cane',
+                            style: GoogleFonts.zenAntique(
+                                fontSize: 16, fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
 
@@ -112,5 +142,3 @@ class _DashboardScreenState extends State<DashboardScreen> {
     );
   }
 }
-
-
