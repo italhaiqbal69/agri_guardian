@@ -2,7 +2,6 @@ import 'package:agri_guardian/UI/screens/Wheat_disease_detection/Wheat_disease_d
 import 'package:agri_guardian/UI/screens/bottom_nav_screen/dashboard_screen/dashboard_controller.dart';
 import 'package:agri_guardian/core/constants/const_colors.dart';
 import 'package:agri_guardian/generated/assets.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -136,7 +135,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
               ],
             ),
           ),
-
         ],
       ),
     );
