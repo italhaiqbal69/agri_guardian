@@ -1,7 +1,7 @@
-class DiseaseModel {
+class SugarCaneDisease {
   final String name;
 
   late String imagePath;
 
-  DiseaseModel({required this.name, required this.imagePath});
+  SugarCaneDisease({required this.name, required this.imagePath});
 }

@@ -105,32 +105,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Account_Row(),
-              Padding(
-                padding: EdgeInsets.only(top: 1.h, left: 10.w, right: 10.w),
-                child: Container(
-                  height: 8.h,
-                  decoration: BoxDecoration(
-                    color: ConstColor.primaryColor.value,
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      Image.asset(
-                        Assets.google_pic,
-                        height: 30,
-                      ),
-                      Text(
-                        'Login with Google',
-                        style: mediumtextStyle.copyWith(
-                            color: ConstColor.kWhite.value,
-                            fontSize: 16,
-                            fontWeight: FontWeight.w300),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
             ],
           ),
         ),

@@ -12,17 +12,18 @@ class sugarcane_disese_detector extends StatefulWidget {
   const sugarcane_disese_detector({super.key});
 
   @override
-  State<sugarcane_disese_detector> createState() => _sugarcane_disese_detectorState();
+  State<sugarcane_disese_detector> createState() =>
+      _sugarcane_disese_detectorState();
 }
 
 class _sugarcane_disese_detectorState extends State<sugarcane_disese_detector> {
   File? file;
   final Classifier classifier = Classifier();
-  late DiseaseModel diseaseModel;
+  late SugarCaneDisease diseaseModel;
 
-  List<String> classNames = ['Healthy', 'septoria', 'stripe_rust'];
+  List<String> classNames = ['Healthy', 'Bacterial Blight', 'Red Rot'];
 
-  void getDiseasetatus(DiseaseProvider diseaseProvider) async {
+  void getDiseasetatus(sugarCaneDiseaseDetectorProvider diseaseProvider) async {
     var image = await ImagePicker().pickImage(source: ImageSource.gallery);
     setState(() {
       file = File(image!.path);
@@ -46,7 +47,7 @@ class _sugarcane_disese_detectorState extends State<sugarcane_disese_detector> {
       await classifier.getDisease(file!.path, classNames).then((value) {
         debugPrint(value.toString());
 
-        diseaseModel = DiseaseModel(
+        diseaseModel = SugarCaneDisease(
             name: value["label"], imagePath: classifier.imageFile.path);
 
         confidence = value['confidence'];
@@ -107,7 +108,9 @@ class _sugarcane_disese_detectorState extends State<sugarcane_disese_detector> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
-                final vm = Provider.of<DiseaseProvider>(context, listen: false);
+                final vm = Provider.of<sugarCaneDiseaseDetectorProvider>(
+                    context,
+                    listen: false);
                 getDiseasetatus(vm);
               },
               child: const Text('Pick Image from Gallery'),

@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 import 'UI/screens/Wheat_disease_detection/disease_provider.dart';
+import 'UI/screens/sugarcane_disease_detection/disease_provider.dart';
 import 'core/constants/cosnt_texts.dart';
 import 'firebase_options.dart';
 
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => DiseaseProvider()),
+        ChangeNotifierProvider(
+            create: (context) => sugarCaneDiseaseDetectorProvider()),
       ],
       child: GetMaterialApp(
         title: 'Flutter Demo',

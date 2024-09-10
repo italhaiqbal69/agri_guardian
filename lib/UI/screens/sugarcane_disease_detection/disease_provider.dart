@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'disease_model.dart';
 
-class DiseaseProvider with ChangeNotifier {
-  late DiseaseModel _diseaseModel;
+class sugarCaneDiseaseDetectorProvider with ChangeNotifier {
+  late SugarCaneDisease _diseaseModel;
 
-  DiseaseModel get disease => _diseaseModel;
+  SugarCaneDisease get disease => _diseaseModel;
 
-  void setDiseaseStatus(DiseaseModel diseaseModel) {
+  void setDiseaseStatus(SugarCaneDisease diseaseModel) {
     _diseaseModel = diseaseModel;
     notifyListeners();
   }

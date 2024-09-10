@@ -65,7 +65,7 @@ class Classifier {
 
   loadModel() async {
     interpreter =
-        await tfl.Interpreter.fromAsset('assets/wheatModel/wheatModel.tflite');
+        await tfl.Interpreter.fromAsset('assets/sugarcaneModel/sugarcaneModel.tflite');
     print('loaded');
   }
 
